@@ -38,7 +38,7 @@ Welcome to the **Inventory Management System**! This project is designed to help
 ### Steps
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/inventory-management-system.git
+   https://github.com/abderrahmane-laourf/management-crud-project.git
    ```
 2. Navigate to the project directory:
    ```bash
