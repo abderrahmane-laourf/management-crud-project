@@ -1,0 +1,543 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Oxanium:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Rubik+Maps&family=Timmana&family=Tiny5&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Oxanium:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Rubik+Maps&family=Timmana&family=Tiny5&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-style: normal;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #ffffffd7, #f8f9fac7);
+}
+
+.sidebar-header {
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 17px;
+    justify-content: space-between;
+}
+
+.sidebar {
+    position: fixed;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: #000000e7;
+    width: 240px;
+    height: calc(100% - 10px);
+    transition: all 0.4s ease;
+    /* Corrected transition */
+}
+
+.sidebar.collapsed {
+    width: 85px;
+}
+
+
+.sidebar-nav .nav-list {
+    list-style: none;
+    gap: 4px;
+    display: flex;
+    padding: 0px 15px;
+    flex-direction: column;
+    transform: translateY(15px);
+    transition: 0.4s ease;
+}
+
+.sidebar .nav-link {
+    display: flex;
+    align-items: center;
+    color: rgb(236, 226, 226);
+    gap: 30px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: all 0.4s ease;
+}
+
+
+.sidebar.collapsed .sidebar-header .sidebar-toggler span {
+    transform: rotate(180deg);
+}
+
+.sidebar.collapsed .nav-list.primary-nav {
+    transform: translateY(65px);
+    transition: 0.4s ease;
+}
+
+
+
+/* Styling for the active navigation link */
+.nav-link.active {
+    background-color:#0e78db;
+    color: white;
+}
+
+
+.sidebar-nav .nav-link:hover {
+    background-color: #0e78db;
+    color: #070707;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.header-logo img {
+    width: 50px;
+}
+
+.sidebar-header .sidebar-toggler {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 25px;
+    border: none;
+    border-radius: 7px;
+    height: 32px;
+    width: 30px;
+    color: rgba(10, 78, 223, 0.911);
+    transition: 0.4s ease;
+}
+
+.sidebar-toggler span {
+    font-size: 1.75rem;
+    transition: 0.4s ease;
+}
+
+.sidebar.collapsed .sidebar-header .sidebar-toggler {
+    transform: translate(0px, 65px);
+    transition: 0.4s ease;
+}
+
+.sidebar-toggler:hover {
+    background-color:#0e78db;
+    cursor: pointer;
+}
+
+#store {
+    color:  #0de9c4;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.sidebar-nav .nav-list.secondary-nav {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+}
+
+
+.label-hover {
+    position: absolute;
+    top: -10px;
+    left: calc(100% + 30px);
+    padding: 5px 7px;
+    border-radius: 8px;
+    color: white;
+    background-color:#0e78db;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    display: none;
+}
+
+.sidebar.collapsed .label-hover {
+    display: block;
+}
+
+.sidebar-nav .nav-item {
+    position: relative;
+}
+
+.sidebar-nav .nav-item:hover .label-hover {
+    opacity: 1;
+    transform: translateY(40%);
+    /* Keeps it centered when hovering */
+    box-shadow: 0px 4px 8px rgba(255, 68, 0, 0.3),
+        0px 2px 4px rgba(0, 50, 212, 0.2);
+    z-index: 10;
+
+}
+
+.store {
+    display: none;
+}
+
+.sidebar-nav .nav-list .nav-label {
+    transition: opacity 0.5 ease;
+}
+
+.menu-toggler {
+    display: none;
+}
+
+.sidebar.collapsed .sidebar-nav .nav-list .nav-label {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+
+
+@media (max-width:765px) {
+    .sidebar {
+        height: 85px;
+        width: calc(100% - 14px);
+        margin: 7px;
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        overflow-y: hidden;
+        transition: height 0.4s ease;
+    }
+
+    .sidebar-header {
+        position: sticky;
+        top: 0px;
+        z-index: 20;
+        background-color:  rgba(0, 0, 0, 0.877);
+        border-radius: 10px;
+    }
+
+    .sidebar-nav .nav-list {
+        padding: 0px 15px;
+    }
+
+    .sidebar-nav .nav-link {
+        gap: 10px;
+        padding: 10px;
+        font-size: 0.94rem;
+    }
+
+    .header-logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .side-bar .nav-item .nav-item .nav-icon {
+        font-size: 1.37rem;
+    }
+
+    .toggler.sidebar-toggler {
+        display: none;
+    }
+
+    .toggler.menu-toggler {
+        display: block;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 25px;
+        border: none;
+        border-radius: 7px;
+        height: 30px;
+        width: 30px;
+        color: #0de9c4;
+        transition: 0.4s ease;
+    }
+
+    .sidebar-nav .nav-list.secondary-nav {
+        position: relative;
+        bottom: 0;
+        width: 40px 0px 30px;
+    }
+
+    main {
+        margin-left: 0 !important;
+        /* Force content to be aligned */
+        width: 100% !important;
+        /* Make sure it takes full width */
+        padding: 0;
+        /* Remove any padding */
+    }
+
+    .content-section.active {
+        margin-left: 0 !important;
+        /* Remove unwanted left space */
+        width: 100% !important;
+        /* Ensure full width */
+        margin-top: 100px;
+        z-index: 1;
+    }
+
+    body,
+    html {
+        overflow-x: hidden;
+        /* Prevents horizontal scrolling */
+        margin: 0;
+        padding: 0;
+    }
+
+}
+
+.content-section {
+    display: none;
+    /* Hidden by default */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.877);
+    border-radius: 10px;
+    color: rgb(236, 226, 226);
+    gap: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: margin-left 0.4s ease, width 0.4s ease;
+}
+
+/* When the content section is active */
+.content-section.active {
+    display: block;
+    /* Show when active */
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    color:rgba(0, 0, 0, 0.877);
+    gap: 20px;
+    height: 93vh;
+    text-decoration: none;
+    font-size: 16px;
+    z-index: 1;
+}
+
+
+/* Adjust content section when sidebar is expanded */
+.content-section.active {
+    margin-left: 240px;
+    /* Adjust content position when sidebar is expanded */
+    width: calc(100% - 240px);
+    /* Take the remaining width */
+}
+
+/* Adjust content section when sidebar is collapsed */
+.sidebar.collapsed+main .content-section.active {
+    margin-left: 85px;
+    width: calc(100% - 85px);
+    z-index: 1;
+}
+
+/* For active navigation links */
+.nav-link.active {
+    background-color:#0e78db;
+    color: rgba(0, 0, 0, 0.877);
+    transition: transform 2s ease;
+}
+
+.nav-link.active .nav-label {
+    transform: translate(10px);
+    opacity: 1;
+    transition: transform 0.5s ease;
+}
+
+.sidebar.collapsed .nav-link.active .nav-label {
+    opacity: 0;
+}
+
+#title {
+    color: #0e78db;
+    background-color: #f8f9fa;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: large;
+    font-family: "IBM Plex Sans Arabic", serif;
+}
+
+#navbar {
+    background-color: rgba(0, 0, 0, 0.877);
+    /* Slightly lighter for better readability */
+    border-right: 2px solid rgba(0, 140, 255, 0.3);
+    box-shadow: 0px 4px 8px rgba(255, 68, 0, 0.3),
+        0px 2px 4px rgba(255, 68, 0, 0.2);
+
+}
+
+#navbar {
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.877);
+    /* Ajoute un espace sous la navbar */
+}
+
+.animate-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.animate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 2px 10px 20px rgba(0, 0, 0, 0.877);
+    cursor: pointer;
+}
+
+.arrow_upward {
+    color: rgb(0, 87, 128);
+}
+
+.titre {
+    text-align: center;
+    margin-top: 30px;
+    color: rgb(11, 22, 77);
+    font-size: 2rem;
+    /* Adjusts size for better readability */
+    font-weight: bold;
+    /* Makes the title stand out */
+    text-transform: capitalize;
+    /* Ensures a clean title style */
+    letter-spacing: 0.5px;
+    /* Adds slight spacing for elegance */
+}
+
+#info a {
+    display: none;
+}
+
+.sidebar.collapsed #info>a {
+    display: none;
+}
+
+.name {
+    color: #ffffff;
+    font-size: medium;
+}
+
+.table-container {
+    /* Slightly lighter for better readability */
+    border-right: 2px solid rgba(0, 140, 255, 0.3);
+    box-shadow: 0px 4px 8px rgba(255, 68, 0, 0.3),
+        0px 2px 4px rgba(255, 68, 0, 0.2);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-custom {
+    border-radius: 20px;
+    padding: 8px 15px;
+}
+
+/* Custom border color */
+.table-bordered th,
+.table-bordered td {
+    border: 2px solid rgba(11, 22, 77, 0.37) !important;
+    /* Grey border */
+}
+
+.active-adding {
+    opacity: 0.5;
+}
+
+.search {
+    height: 30px;
+}
+
+.tale-titre-graphe {
+    color: rgb(11, 22, 77);
+    font-size: 23px;
+}
+
+.alert.fade-out {
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out;
+    /* 0.5s hiya moddat l fade out */
+}
+
+#alert-message {
+    font-size: 1.1rem;
+    /* Slightly larger font */
+}
+
+.alert {
+    position: fixed;
+    top: 20px;
+    /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    /* Center horizontally */
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    /* Ensure it's on top of other elements */
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+    /* Fade-out transition */
+}
+
+.toast-container {
+    position: fixed;
+    /* أو absolute، حسب تصميمك */
+    bottom: 20px;
+    /* تعديل حسب موقع الـ toast */
+    left: 50%;
+    transform: translateX(-50%);
+    /* توسيط أفقي */
+    z-index: 1000;
+    /* تأكد من أنه فوق العناصر الأخرى */
+}
+
+.toast {
+    background-color: #ff0004cd !important;
+    /* أحمر */
+    color: black !important;
+    padding: 20px;
+    margin-top: 10px;
+    /* مسافة بين الـ toasts إذا كان هناك أكثر من واحد */
+    border-radius: 15px;
+    opacity: 0;
+    /* مخفي في البداية */
+    transition: opacity 0.5s ease-in-out;
+    /* تأثير تلاشي */
+}
+
+.toast-edit {
+    background-color: #0be603a3 !important;
+    /* أحمر */
+    color: black !important;
+    padding: 20px;
+    margin-top: 10px;
+    /* مسافة بين الـ toasts إذا كان هناك أكثر من واحد */
+    border-radius: 15px;
+    opacity: 0;
+    /* مخفي في البداية */
+    transition: opacity 0.5s ease-in-out;
+    /* تأثير تلاشي */
+}
+
+.toast.show {
+    opacity: 1;
+    /* يظهر */
+}
+
+.none {
+    display: none !important;
+}
+
+#product-list {
+    max-height: 200px;
+    /* Adjust as needed */
+    overflow-y: auto;
+    /* Add scroll if needed */
+    padding: 10px;
+    /* Add some padding to the container */
+    border: 1px solid #ccc;
+    /* Optional border for visual separation */
+}
+
+.product-item {
+    padding: 5px 0;
+    /* Adjust vertical spacing */
+}
+
+.product-item .quantity {
+    font-weight: bold;
+    /* Optional: make the quantity stand out */
+}
+.swal-wide{
+    width: 40% !important;
+    background-color:  rgba(0, 0, 0, 0.925);
+    color: rgba(0, 140, 255, 0.911);
+  }

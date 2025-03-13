@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <!-- font_link -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<title>management system.com</title>
+
+</head>
+
+<body>
+    <!-- sidebar -->
+    <aside class="sidebar">
+        <!-- header -->
+        <header class="sidebar-header">
+            <!-- logo de header i am add the logo in header-->
+            <a href="#" class="header-logo rounded-circle img-fluid">
+                <img src="/image/blue-tape-circle-logo-icon-free-png.webp" alt="">
+            </a>
+            <!-- a icon for header -->
+            <button class="toggler sidebar-toggler">
+                <span class="material-symbols-outlined">
+                    chevron_left
+                </span>
+            </button>
+            <button class="toggler menu-toggler">
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+            </button>
+        </header>
+
+
+        <!-- nav of the sidebar -->
+        <!-- nav of the sidebar -->
+        <nav class="sidebar-nav">
+            <!-- list content a a items and link content a icone and a nav label-->
+            <ul class="nav-list primary-nav">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" data-target="dashboard-content">
+                        <span class="nav-icon material-symbols-outlined">dashboard</span>
+                        <span class="nav-label">Dashboard</span>
+                    </a>
+                    <span class="label-hover">Dashboard</span>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-target="gestion_Products-content">
+                        <span class="nav-icon material-symbols-outlined">edit_document</span>
+                        <span class="nav-label">Products</span>
+                    </a>
+                    <span class="label-hover">Gestion Produits</span>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-target="operation_stock-content">
+                        <span class="nav-icon material-symbols-outlined">inventory</span>
+                        <span class="nav-label">Stock</span>
+                    </a>
+                    <span class="label-hover">Opération Stock</span>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-target="operation_ventes-content">
+                        <span class="nav-icon material-symbols-outlined">shopping_cart</span>
+                        <span class="nav-label">Vents</span>
+                    </a>
+                    <span class="label-hover">Opération Ventes</span>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-target="settings-content">
+                        <span class="nav-icon material-symbols-outlined">settings</span>
+                        <span class="nav-label">settings</span>
+                    </a>
+                    <span class="label-hover">settings</span>
+                </li>
+            </ul>
+            <ul class="nav-list secondary-nav">
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-target="account-content">
+                        <span class="nav-icon material-symbols-outlined">account_circle</span>
+                        <span class="nav-label">login</span>
+                    </a>
+                    <span class="label-hover">login</span>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-target="logout-content">
+                        <span class="nav-icon material-symbols-outlined">logout</span>
+                        <span class="nav-label">logout</span>
+                    </a>
+                    <span class="label-hover">logout</span>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <main id="main-content">
+
+        <!-- ==================== dashboard-content ==================== -->
+
+        <section id="dashboard-content" class="content-section active">
+            <nav id="navbar" class="navbar navbar-light rounded mb-2 ">
+                <div class="container">
+                    <a href="" class=""><img src="/image/image.png " width="100px" height="30px"></a>
+
+                    <!-- Avatar Image with rounded-circle and img-fluid for responsiveness -->
+                    <a class="navbar-brand d-flex align-items-center" href="#">
+                        <span class="name">Abderrahmane</span>
+                        <img src="/image/pngtree-man-avatar-image-for-profile-png-image_13001877.png" alt="Avatar"
+                            class="rounded-circle img-fluid" style="width: 40px; height: 40px;">
+                        <span class="nav-icon material-symbols-outlined ms-2 text-info">notifications</span>
+                    </a>
+                </div>
+            </nav>
+
+            <h1 class="titre">Dashboard</h1>
+
+            <div id="cards-container" class="container mt-5">
+                <div class="row g-5">
+                    <!-- Clients Card -->
+                    <div class="col-md-4">
+                        <div class="card text-white shadow-lg border-0 rounded-lg text-center animate-card w-100"
+                            style="background: linear-gradient(130deg, #c76509, #1e1d6d);">
+                            <div class="card-body d-flex justify-content-between">
+                                <div><span class="material-symbols-outlined fs-1 text-dark">group</span>
+                                    <h5 class="card-title mt-3 fw-bold text-dark">Clients</h5>
+                                </div>
+                                <div>
+                                    <h2 class="">0</h2>
+                                    <span class="material-symbols-outlined text-danger fs-2">arrow_downward</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Orders Card -->
+                    <div class="col-md-4">
+                        <div class="card text-white shadow-lg border-0 rounded-lg text-center  animate-card w-100"
+                            style="background: linear-gradient(135deg, #268996d0, #0f515a); position: relative;">
+                            <div class="card-body d-flex justify-content-between">
+                                <div><span class="material-symbols-outlined fs-1 text-dark">shopping_cart</span>
+                                    <h5 class="card-title mt-3 fw-bold text-dark">Orders</h5>
+                                </div>
+                                <div>
+                                    <h2 class="">0</h2>
+                                    <span class="material-symbols-outlined text-success fs-2"
+                                        style="position: absolute; right: 19px;;">arrow_upward</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Products Card -->
+                    <div class="col-md-4">
+                        <div class="card text-white shadow-lg border-0 rounded-lg text-center animate-card w-100"
+                            style="background: linear-gradient(130deg, #249128, #9c2a0e);">
+                            <div class="card-body d-flex justify-content-between">
+                                <div> <span class="material-symbols-outlined fs-1 text-dark">inventory</span>
+                                    <h5 class="card-title mt-3 fw-bold text-dark">Products</h5>
+                                </div>
+                                <div>
+                                    <h2 class=""></h2>
+                                    <span class="material-symbols-outlined text-info fs-2" id="arrow_upward"
+                                        style="position: absolute; right: 19px;;">arrow_upward</span>
+                                    <span class="material-symbols-outlined text-danger fs-2 none"
+                                        id="arrow_downward">arrow_downward</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-5">
+                <h2 class="tale-titre-graphe">table of devloppement</h2>
+                <canvas id="salesChart" width="50%" height="10%"></canvas>
+        </section>
+
+
+        <!-- ==================== Gestion des Produits ==================== -->
+
+        <section id="gestion_Products-content" class="content-section">
+
+            <nav id="navbar" class="navbar navbar-light rounded mb-2 ">
+                <div class="container">
+                    <a href=""><img src="/image/image.png " class="rounded-flip img-fluid"
+                            style="width: 100px; height: 30px;" alt="Avatar"></a>
+                    <!-- Avatar Image with rounded-circle and img-fluid for responsiveness -->
+                    <a class="navbar-brand d-flex align-items-center" href="#">
+                        <span class="name">Abderrahmane</span>
+                        <img src="/image/pngtree-man-avatar-image-for-profile-png-image_13001877.png" alt="Avatar"
+                            class="rounded-circle img-fluid" style="width: 40px; height: 40px;">
+                        <span class="nav-icon material-symbols-outlined ms-2 text-info">notifications</span>
+                    </a>
+                </div>
+            </nav>
+
+            <h2 class="titre">📦 Produits</h2>
+
+            <div class="container-fluid mt-4">
+                <div class="table-container">
+                    <!-- Barre de recherche -->
+                    <div class="d-flex justify-content-between mb-3">
+                        <div class="input-group w-50 d-flex align-items-center">
+                            <input type="text" class="form-control border-dark" id="search-produit"
+                                placeholder="🔍 Rechercher un produit...">
+                        </div>
+                        <button class="btn btn-outline-primary btn-custom d-flex  fs-6 align-items-center new-product">
+                            <span class="material-symbols-outlined">add</span><span>Nouveau Produit</span>
+                        </button>
+                    </div>
+                    <div class="modal fade" id="addProductModal" aria-labelledby="addProductModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content rounded-4"> <!-- Added rounded corners -->
+                                <!-- Header with a sleek dark blue background -->
+                                <div class="modal-header bg-primary text-white rounded-top-4">
+                                    <h5 class="modal-title" id="addProductModalLabel">Ajouter un Produit</h5>
+                                </div>
+                                <!-- Modal Body with a soft light background -->
+                                <div class="modal-body bg-light rounded-bottom-4">
+                                    <form id="productForm">
+                                        <div class="mb-3">
+                                            <label for="productName" class="form-label text-dark fw-bold">Nom du
+                                                Produit</label>
+                                            <input type="text"
+                                                class="form-control border-primary shadow-sm w-100 rounded-3"
+                                                id="productName" required placeholder="Entrez le nom du produit">
+                                        </div>
+                                        <!-- Buttons for Annuler and Ajouter -->
+                                        <div class="modal-footer bg-light border-0 rounded-bottom-4">
+                                            <button type="button" class="btn btn-outline-secondary rounded-3"
+                                                data-bs-dismiss="modal">Annuler</button>
+                                            <button type="submit" id="adding-product"
+                                                class="btn btn-primary rounded-3">Ajouter le Produit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- Tableau des produits -->
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover table-bordered text-center align-middle">
+                            <!-- Table Header -->
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col" class="fs-6 fw-bold">#</th>
+                                    <th scope="col" class="fs-6">Titre</th>
+                                    <th scope="col" class="fs-6">Qté en Stock</th>
+                                    <th scope="col" class="fs-6">Qté Vendue</th>
+                                    <th scope="col" class="fs-6">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="information">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== operation_stock ==================== -->
+
+        <section id="operation_stock-content" class="content-section">
+            <!-- ================== Barre de navigation ================== -->
+            <nav id="navbar" class="navbar navbar-light rounded mb-2">
+                <div class="container">
+                    <a href=""><img src="/image/image.png " class=" img-fluid" style="width: 100px; height: 30px;"
+                            alt="Avatar"></a>
+                    <a class="navbar-brand d-flex align-items-center" href="#">
+                        <span class="name">Abderrahmane</span>
+                        <img src="/image/pngtree-man-avatar-image-for-profile-png-image_13001877.png" alt="Avatar"
+                            class="rounded-circle img-fluid" style="width: 40px; height: 40px;">
+                        <span class="nav-icon material-symbols-outlined ms-2 text-info">notifications</span>
+                    </a>
+                </div>
+            </nav>
+
+            <h2 class="titre">Opérations de stock</h2>
+
+            <div class="container-fluid mt-4">
+                <div class="table-container">
+                    <!-- ================== Barre de recherche et bouton d'ajout ================== -->
+                    <div class="d-flex justify-content-between mb-3">
+                        <div class="input-group w-50 d-flex align-items-center">
+                            <input type="text" class="form-control border-dark" id="searchStockProduct"
+                                placeholder="🔍 Rechercher un produit...">
+                            </button>
+                        </div>
+                        <button class="btn btn-outline-primary btn-custom d-flex align-items-center new-operation"
+                            data-bs-toggle="modal" data-bs-target="#modalNewStockOperation">
+                            <span class="material-symbols-outlined">add</span><span>Nouvelle Opération</span>
+                        </button>
+                    </div>
+
+                    <!-- ================== Modal Nouvelle Opération Stock ================== -->
+                    <div class="modal fade" id="modalNewStockOperation" tabindex="-1"
+                        aria-labelledby="labelNewStockOperation" aria-hidden="true">
+                        <div class="modal-dialog modal-lg"> <!-- Consider modal-lg or modal-xl for more space -->
+                            <div class="modal-content">
+                                <div class="modal-header bg-primary text-white">
+                                    <!-- Use text-white for better contrast -->
+                                    <h5 class="modal-title" id="labelNewStockOperation">Nouvelle Opération Stock</h5>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                        aria-label="Fermer"></button> <!-- btn-close-white for dark backgrounds -->
+                                </div>
+                                <div class="modal-body">
+                                    <form id="stockOperationForm"> <!-- Add an ID to the form -->
+                                        <div class="mb-3">
+                                            <label for="stockSupplier" class="form-label">Nom du Fournisseur</label>
+                                            <input type="text" class="form-control" id="stock_nom"
+                                                placeholder="Saisir le nom du fournisseur" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="stockDate">Date:</label>
+                                            <input type="date" class="form-control" value="2005-05-05" id="stockDate"
+                                                required>
+                                        </div>
+
+                                        <h4 class="mt-3">Produits</h4>
+
+                                        <!-- Product List Display -->
+                                        <div id="productList" class="mb-3">
+                                            <!-- Product items will be dynamically added here -->
+                                        </div>
+
+                                        <!-- Add Product Section -->
+                                        <div class="row g-3 d-flex align-items-end ">
+                                            <!-- align-items-center for vertical alignment -->
+                                            <div class="col-md-6">
+                                                <label for="selectProduct" class="form-label">Choisir un Produit</label>
+                                                <select class="form-select" id="selectProduct">
+                                                    <option value="" selected>Choisissez...</option>
+                                                    <option value=""></option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="productQuantity" class="form-label">Quantité</label>
+                                                <div class="input-group">
+                                                    <!-- Use input-group for better add-on styling -->
+                                                    <input type="number" class="form-control" id="productQuantity"
+                                                        value="1" min="1" required>
+                                                    <span class="input-group-text">Unité(s)</span> <!-- Example unit -->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <button type="button" class="btn btn-outline-success add-product w-100"
+                                                    aria-label="Ajouter produit"> <!-- More prominent button -->
+                                                    <i class="material-symbols-outlined align-middle">add</i> Ajouter
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Annuler</button>
+                                    <button type="submit" form="stockOperationForm"
+                                        class="btn btn-primary save-operation">Enregistrer</button>
+                                    <!-- Primary button style -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!--======================= detaills stock ========================-->
+                    <div class="modal fade" id="detailsStockModal" tabindex="-1"
+                        aria-labelledby="detailsStockModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="detailsStockModalLabel">Détails Opération Stock</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label for="fournisseur" class="form-label">Fournisseur</label>
+                                        <input type="text" class="form-control" id="fournisseur" readonly>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="dateLivraison" class="form-label">Date Livraison</label>
+                                        <input type="text" class="form-control" id="dateLivraison" readonly>
+                                    </div>
+
+                                    <h4 class="mt-3">Produits</h4>
+                                    <ul class="list-unstyled">
+                                        <li>IPhone 13 <span class="float-end"></span></li>
+                                        <li><span class="float-end"></span></li>
+                                    </ul>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Annuler</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================== Tableau des opérations de stock ================== -->
+                    <div class="table-responsive-sm">
+                        <table class="table table-striped table-hover table-bordered text-center align-middle"
+                            aria-label="Stock Operations">
+                            <caption class="visually-hidden">List of Stock Operations</caption>
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Fournisseur</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Nombre Produits</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="stockTableBody">
+                                <!-- Stock operation rows will be inserted here by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--=================== operation_ventes-content ====================-->
+
+        <section id="operation_ventes-content" class="content-section">
+            <nav id="navbar" class="navbar navbar-light rounded mb-2">
+                <div class="container">
+                    <a href=""><img src="/image/image.png " class=" img-fluid" style="width: 100px; height: 30px;"
+                            alt="Avatar"></a>
+                    <a class="navbar-brand d-flex align-items-center" href="#">
+                        <span class="name">Abderrahmane</span>
+                        <img src="/image/pngtree-man-avatar-image-for-profile-png-image_13001877.png" alt="Avatar"
+                            class="rounded-circle img-fluid" style="width: 40px; height: 40px;">
+                        <span class="nav-icon material-symbols-outlined ms-2 text-info">notifications</span>
+                    </a>
+                </div>
+            </nav>
+
+            <h2 class="titre">Opérations de Vente</h2>
+
+            <div class="container-fluid mt-4">
+                <div class="table-container">
+                    <!-- ================== Barre de recherche et bouton d'ajout ================== -->
+                    <div class="d-flex justify-content-between mb-3">
+                        <div class="input-group w-50 d-flex align-items-center">
+                            <input type="text" class="form-control border-dark" id="searchVenteProduct"
+                                placeholder="🔍 Rechercher un produit...">
+                        </div>
+                        <button class="btn btn-outline-primary btn-custom d-flex align-items-center new-operation-vente"
+                            data-bs-toggle="modal" data-bs-target="#modalNewVenteOperation">
+                            <span class="material-symbols-outlined">add</span><span>Nouvelle Vente</span>
+                        </button>
+                    </div>
+
+                    <!-- ================== Modal Nouvelle Vente ================== -->
+                    <div class="modal fade" id="modalNewVenteOperation" tabindex="-1"
+                        aria-labelledby="labelNewVenteOperation" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header bg-primary text-white">
+                                    <h5 class="modal-title" id="labelNewVenteOperation">Nouvelle Vente</h5>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                        aria-label="Fermer"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="venteOperationForm">
+                                        <div class="mb-3">
+                                            <label for="venteClient" class="form-label">Nom du Client</label>
+                                            <input type="text" class="form-control" id="vente_nom"
+                                                placeholder="Saisir le nom du client" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="venteDate">Date:</label>
+                                            <input type="date" class="form-control" value="2025-03-10" id="venteDate"
+                                                required>
+                                        </div>
+
+                                        <h4 class="mt-3">Produits</h4>
+
+                                        <div id="venteProductList" class="mb-3">
+                                            <!-- Product items will be dynamically added here -->
+                                        </div>
+
+                                        <!-- Add Product Section -->
+                                        <div class="row g-3 d-flex align-items-end ">
+                                            <div class="col-md-6">
+                                                <label for="selectVenteProduct" class="form-label">Choisir un
+                                                    Produit</label>
+                                                <select class="form-select" id="selectVenteProduct">
+                                                    <option value="" selected>Choisissez...</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="venteProductQuantity" class="form-label">Quantité</label>
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" id="venteProductQuantity"
+                                                        value="1" min="1" required>
+                                                    <span class="input-group-text">Unité(s)</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <button type="button"
+                                                    class="btn btn-outline-success add-vente-product w-100"
+                                                    aria-label="Ajouter produit">
+                                                    <i class="material-symbols-outlined align-middle">add</i> Ajouter
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Annuler</button>
+                                    <button type="submit" form="venteOperationForm"
+                                        class="btn btn-primary save-vente">Enregistrer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--======================= Détails de Vente ========================-->
+                    <div class="modal fade" id="detailsVenteModal" tabindex="-1"
+                        aria-labelledby="detailsVenteModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="detailsVenteModalLabel">Détails Vente</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label for="client" class="form-label">Client</label>
+                                        <input type="text" class="form-control" id="client" readonly>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="dateVente" class="form-label">Date Vente</label>
+                                        <input type="text" class="form-control" id="dateVente" readonly>
+                                    </div>
+                                    <h4 class="mt-3">Produits</h4>
+                                    <ul class="list-unstyled">
+                                        <li>Produit 1 <span class="float-end"></span></li>
+                                        <li>Produit 2 <span class="float-end"></span></li>
+                                    </ul>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Annuler</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ================== Tableau des opérations de vente ================== -->
+                    <div class="table-responsive-sm">
+                        <table class="table table-striped table-hover table-bordered text-center align-middle"
+                            aria-label="Vente Operations">
+                            <caption class="visually-hidden">List of Vente Operations</caption>
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Client</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Nombre Produits</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="venteTableBody">
+                                <!-- Vente operation rows will be inserted here by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section id="settings-content" class="content-section">
+            <h2>Paramètres</h2>
+            <p>Gérez vos paramètres ici.</p>
+        </section>
+        <section id="account-content" class="content-section">
+            <h2>Compte</h2>
+            <p>Informations du compte.</p>
+        </section>
+        <section id="logout-content" class="content-section">
+            <h2>Déconnexion</h2>
+            <p>Vous êtes déconnecté.</p>
+        </section>
+    </main>
+
+    <!-- Modal -->
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/main.js"></script>
+</body>
+
+</html>
