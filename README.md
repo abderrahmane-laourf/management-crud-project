@@ -98,8 +98,8 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Contact 📧
 
 For any questions or feedback, feel free to reach out:  
-📩 Email: your-email@example.com  
-🌐 Website: [www.yourwebsite.com](https://www.yourwebsite.com)
+📩 Email:  abderrahmanelaourf10@gmail.com
+ linkdiln: https://www.linkedin.com/in/abderrahmane-laourf-0853692a3/details/education/
 
 ---
 
